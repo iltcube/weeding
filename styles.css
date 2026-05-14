@@ -1,0 +1,597 @@
+:root {
+  --bg: #cbc2b2;
+  --panel: #cdc4b5d2;
+  --text: #1f1d1b;
+  --accent: #6f5a45;
+  --line: #f6f2eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  background-color: var(--bg);
+}
+
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.bg-tint {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 8% 15%, #f2ede1a6 0 15%, transparent 32%),
+    radial-gradient(circle at 92% 24%, #f2ede1a8 0 18%, transparent 36%),
+    radial-gradient(circle at 2% 70%, #f2ede1a6 0 16%, transparent 34%),
+    radial-gradient(circle at 95% 80%, #f2ede1a8 0 20%, transparent 38%),
+    linear-gradient(95deg, #d6cdbdb8, #c7beafbc 40%, #d2c8b8b8 60%, #c7beafb8);
+  z-index: -1;
+}
+
+.page {
+  width: 100%;
+  max-width: 1008px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+.hero {
+  min-height: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.caps {
+  letter-spacing: 0.2em;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.small {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.hero-names {
+  margin: 22px 0 10px;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 0.88;
+  letter-spacing: 0.04em;
+  font-size: clamp(56px, 9vw, 86px);
+  font-weight: 500;
+}
+
+.hero-names span {
+  color: #878072;
+  font-weight: 400;
+}
+
+.month {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  margin: 20px 0 0;
+  letter-spacing: 0.08em;
+}
+
+.day {
+  font-size: 86px;
+  line-height: 1;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.year {
+  letter-spacing: 0.35em;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  margin-top: -2px;
+}
+
+.arrow {
+  font-size: 36px;
+  margin-top: 8px;
+  opacity: 0.75;
+}
+
+.card {
+  width: min(94vw, 700px);
+  margin: 0 auto 54px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 20px;
+  text-align: center;
+}
+
+.photo {
+  width: 100%;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-couple {
+  aspect-ratio: 4 / 3;
+  background-image: linear-gradient(
+    165deg,
+    #8a7a65 0%,
+    #d6c9b8 30%,
+    #5e4a3b 60%,
+    #cab59f 100%
+  );
+}
+
+.photo-location {
+  margin-top: 16px;
+  aspect-ratio: 4 / 3.2;
+  background-image: linear-gradient(
+    180deg,
+    #b7cee2 0%,
+    #dee8f0 28%,
+    #a3b2a0 58%,
+    #857363 100%
+  );
+}
+
+.title {
+  margin: 16px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(44px, 6vw, 62px);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.script {
+  margin: -14px 0 8px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(50px, 7vw, 74px);
+  color: #655544;
+  line-height: 1;
+}
+
+.text {
+  margin: 10px auto;
+  max-width: 92%;
+  font-size: 22px;
+  line-height: 1.42;
+}
+
+.date-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(56px, 7vw, 74px);
+  margin: 20px 0 8px;
+}
+
+.monogram {
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 56px;
+  color: #7a6755;
+  margin: 12px 0 18px;
+}
+
+.monogram span {
+  margin-left: -8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  min-width: 190px;
+  height: 44px;
+  text-decoration: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.location-details {
+  margin-top: 0;
+}
+
+.map-wrap {
+  margin-top: 6px;
+  border: 1px solid #e8e1d4;
+  overflow: hidden;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: min(52vw, 300px);
+  border: 0;
+  display: block;
+}
+
+.schedule-list {
+  margin-top: 22px;
+  display: grid;
+  gap: 18px;
+  text-align: left;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 16px;
+}
+
+.time {
+  font-size: 62px;
+  line-height: 0.9;
+  font-family: "Great Vibes", cursive;
+  padding-left: 8px;
+}
+
+.event {
+  font-size: 26px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.desc p {
+  margin: 4px 0;
+  font-size: 23px;
+  line-height: 1.28;
+}
+
+.divider {
+  width: 90px;
+  margin: 20px auto;
+  border-top: 1px solid #6b5a49;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(7, 58px);
+  justify-content: center;
+  gap: 14px;
+  margin: 16px 0 26px;
+}
+
+.palette span {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid #e5dccf;
+  background: var(--sw);
+}
+
+.dress-card {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.dress-copy {
+  max-width: 86%;
+}
+
+.dress-people {
+  width: calc(100% + 40px);
+  margin: 10px -20px 0;
+  min-height: 360px;
+  background: linear-gradient(to bottom, #f3efe8 0%, #f6f1e9 58%, #c8b89e 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dress-people img {
+  width: 104%;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr 1fr;
+  gap: 4px;
+}
+
+.mood {
+  min-height: 132px;
+  background-size: cover;
+  background-position: center;
+}
+
+.mood.tall {
+  min-height: 232px;
+}
+
+.mood.wide {
+  grid-column: 2;
+}
+
+.mood.one {
+  background-image: linear-gradient(145deg, #ccd4df, #8ca0be);
+}
+
+.mood.two {
+  background-image: linear-gradient(145deg, #d8c8be, #f0e4d8);
+}
+
+.mood.three {
+  background-image: linear-gradient(145deg, #a9b6be, #d0b8a9);
+}
+
+.info-card {
+  text-align: left;
+  padding: 26px 30px;
+}
+
+.top-script {
+  text-align: center;
+  margin-top: 0;
+}
+
+.small-title {
+  text-align: center;
+  font-size: 45px;
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+
+.info-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  margin: 18px 0 6px;
+  letter-spacing: 0.03em;
+}
+
+.info-card p {
+  font-size: 23px;
+  line-height: 1.33;
+  margin: 0;
+}
+
+.info-card a {
+  color: inherit;
+}
+
+.countdown-section {
+  margin: 40px 0;
+  height: min(70vw, 520px);
+  background: linear-gradient(145deg, #5b4330, #836145 45%, #4c3a2f);
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.countdown-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  color: #f2eee8;
+  text-align: center;
+  z-index: 1;
+}
+
+.countdown-overlay p {
+  font-size: 34px;
+  margin: 0 0 14px;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.counter > div {
+  border-left: 1px solid #ffffff33;
+}
+
+.counter > div:first-child {
+  border-left: 0;
+}
+
+.counter span {
+  display: block;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.counter small {
+  font-size: 24px;
+  opacity: 0.95;
+}
+
+.form-card {
+  text-align: left;
+  padding: 24px 36px 30px;
+}
+
+.form-card .title,
+.form-card .script,
+.form-card .text,
+.final,
+.final-script {
+  text-align: center;
+}
+
+.guest-form {
+  margin-top: 12px;
+  font-size: 22px;
+}
+
+.guest-form label {
+  display: block;
+  margin: 10px 0 6px;
+}
+
+.hint {
+  margin: 0 0 6px;
+  font-size: 21px;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #675645;
+  background: transparent;
+  padding: 8px 0;
+  font-size: 20px;
+  font-family: inherit;
+}
+
+.guest-form hr {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid #675645;
+}
+
+.radio,
+.check {
+  margin: 4px 0;
+  font-size: 20px;
+}
+
+.final {
+  margin-top: 38px;
+}
+
+.final-script {
+  margin-top: -18px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .small {
+    font-size: 12px;
+  }
+
+  .hero-names {
+    font-size: clamp(44px, 16vw, 74px);
+  }
+
+  .month {
+    font-size: 20px;
+  }
+
+  .day {
+    font-size: 56px;
+  }
+
+  .year {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .script {
+    font-size: 48px;
+  }
+
+  .text,
+  .desc p,
+  .info-card p,
+  .guest-form,
+  .radio,
+  .check,
+  .hint,
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  .date-line {
+    font-size: 45px;
+  }
+
+  .schedule-item {
+    grid-template-columns: 86px 1fr;
+    gap: 10px;
+  }
+
+  .time {
+    font-size: 48px;
+    padding-left: 0;
+  }
+
+  .event {
+    font-size: 18px;
+  }
+
+  .palette {
+    grid-template-columns: repeat(7, 34px);
+    gap: 8px;
+  }
+
+  .palette span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dress-copy {
+    max-width: 96%;
+  }
+
+  .dress-people {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+    margin-right: -14px;
+    min-height: 220px;
+  }
+
+  .dress-people img {
+    width: 126%;
+  }
+
+  .small-title {
+    font-size: 32px;
+  }
+
+  .info-card h3 {
+    font-size: 30px;
+  }
+
+  .countdown-overlay p {
+    font-size: 20px;
+  }
+
+  .counter span {
+    font-size: 48px;
+  }
+
+  .counter small {
+    font-size: 12px;
+  }
+
+  .form-card {
+    padding: 16px;
+  }
+}
