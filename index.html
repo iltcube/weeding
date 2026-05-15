@@ -29,7 +29,6 @@
       </section>
 
       <section class="card intro-card">
-        <div class="photo photo-couple"></div>
         <h2 class="title">РОДНЫЕ И БЛИЗКИЕ!</h2>
         <p class="script">Мы женимся!</p>
         <p class="text">
@@ -69,7 +68,9 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div class="photo photo-location"></div>
+        <div class="photo photo-location" aria-label="Фото локации">
+          <img src="assets/space.jpg" alt="Загородный парк-отель Цитадель" />
+        </div>
       </section>
 
       <section class="card schedule-card">
@@ -166,30 +167,71 @@
           Будем очень признательны, если Вы подтвердите своё присутствие и
           заполните анкету до 15 августа.
         </p>
-        <form class="guest-form">
+        <form class="guest-form" id="guest-form">
           <label>Имя и фамилия</label>
           <p class="hint">Если Вы будете со своей парой, укажите оба имени</p>
-          <input type="text" placeholder="Иван Иванов/Мария Иванова" />
+
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Иван Иванов/Мария Иванова"
+            required
+          />
+
           <hr />
 
           <label>Подтвердите своё присутствие:</label>
-          <label class="radio"
-            ><input type="radio" name="presence" /> Да, с удовольствием!</label
-          >
-          <label class="radio"
-            ><input type="radio" name="presence" /> К сожалению, не смогу</label
-          >
+
+          <label class="radio">
+            <input
+              type="radio"
+              name="presence"
+              value="Да, с удовольствием!"
+              required
+            />
+            Да, с удовольствием!
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="presence" value="К сожалению, не смогу" />
+            К сожалению, не смогу
+          </label>
 
           <label>Ваши предпочтения в напитках:</label>
-          <label class="check"><input type="checkbox" /> Вино белое</label>
-          <label class="check"><input type="checkbox" /> Вино красное</label>
-          <label class="check"><input type="checkbox" /> Игристое</label>
-          <label class="check"
-            ><input type="checkbox" /> Крепкий алкоголь</label
-          >
-          <label class="check"
-            ><input type="checkbox" /> Безалкогольные напитки</label
-          >
+
+          <label class="check">
+            <input type="checkbox" name="drinks" value="Вино белое" />
+            Вино белое
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="drinks" value="Вино красное" />
+            Вино красное
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="drinks" value="Игристое" />
+            Игристое
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="drinks" value="Крепкий алкоголь" />
+            Крепкий алкоголь
+          </label>
+
+          <label class="check">
+            <input
+              type="checkbox"
+              name="drinks"
+              value="Безалкогольные напитки"
+            />
+            Безалкогольные напитки
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="transfer" />
+            Нужен трансфер
+          </label>
 
           <button type="submit" class="btn">ОТПРАВИТЬ</button>
         </form>
