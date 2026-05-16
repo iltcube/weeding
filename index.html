@@ -165,7 +165,7 @@
         <p class="script">Анкета гостя</p>
         <p class="text">
           Будем очень признательны, если Вы подтвердите своё присутствие и
-          заполните анкету до 15 августа.
+          заполните анкету до 1 июня.
         </p>
         <form class="guest-form" id="guest-form">
           <label>Имя и фамилия</label>
@@ -228,9 +228,16 @@
             Безалкогольные напитки
           </label>
 
-          <label class="check">
-            <input type="checkbox" name="transfer" />
-            Нужен трансфер
+          <label>Нужен трансфер:</label>
+
+          <label class="radio">
+            <input type="radio" name="transfer" value="Да" />
+            Да
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="transfer" value="Нет" />
+            Нет
           </label>
 
           <button type="submit" class="btn">ОТПРАВИТЬ</button>
